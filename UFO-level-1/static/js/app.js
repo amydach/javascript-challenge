@@ -8,6 +8,57 @@ let tbody = d3.select("tbody");
 // Console.log the ufo data from data.js
 console.log(data);
 
+// BONUS: Refactor to use Arrow Functions!
+
+function pullTable(data){
+    tbody.html("");
+data.forEach((ufoReport) => {
+    const row = tbody.append("tr");
+    for (key in ufoReport){
+        const cell = tbody.append("td");
+        cell.text(ufoReport[key]);
+    }
+});
+}
+
+
+
+
+
+// //**************FILTER SECTION*********************
+//ADDING ROWS BELOW FROM 14-3-9 TO START WORKING ON FILTER
+
+// Select the submit button
+
+
+function filterClick(){
+
+  // Prevent the page from refreshing
+//d3.event.preventDefault();
+
+  // Select the input element and get the raw HTML node
+  const inputElement = d3.select("#datetime");
+
+  // Get the value property of the input element
+  const inputValue = inputElement.property("value");
+  let filteredData = tableData;
+ // console.log(inputValue);
+ // console.log(ufoSitings);
+  if (inputValue){
+    filteredData = filteredData.filter(sitingDate => sitingDate.datetime === inputValue);
+    }
+    pullTable(filteredData);
+}
+d3.selectAll("#filter-btn").on("click",filterClick);
+
+pullTable(tableData);
+//console.log(filteredData);
+
+// //**************FILTER SECTION*********************
+
+
+
+
 // // Step 1: Loop Through `data` and console.log each ufo report object
 // data.forEach(function(ufoReport) {
 //   console.log(ufoReport);
@@ -51,43 +102,3 @@ console.log(data);
     //     cell.text(value);
     // }
 
-
-
-// BONUS: Refactor to use Arrow Functions!
-data.forEach((ufoReport) => {
-    const row = tbody.append("tr");
-    for (key in ufoReport){
-        const cell = tbody.append("td");
-        cell.text(ufoReport[key]);
-    }
-});
-
-
-
-// //**************FILTER SECTION*********************
-// //ADDING ROWS BELOW FROM 14-3-9 TO START WORKING ON FILTER
-
-// //Assign the data from `data.js` to a descriptive constiable
-// const ufoSitings = data;
-
-// // Select the submit button
-// const submit = d3.select("#Filter Table");
-
-// submit.on("click", function() {
-
-//   // Prevent the page from refreshing
-//   d3.event.preventDefault();
-
-//   // Select the input element and get the raw HTML node
-//   const inputElement = d3.select("#datetime");
-
-//   // Get the value property of the input element
-//   const inputValue = inputElement.property("value");
-
-//   console.log(inputValue);
-//   console.log(ufoSitings);
-
-//   const filteredData = ufoSitings.filter(sitingDate => sitingDate.datetime === inputValue);
-
-//   console.log(filteredData);
-// //**************FILTER SECTION*********************
