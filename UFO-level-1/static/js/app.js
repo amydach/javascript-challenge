@@ -59,46 +59,46 @@ pullTable(tableData);
 
 
 
-// // Step 1: Loop Through `data` and console.log each ufo report object
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-// });
+// Step 1: Loop Through `data` and console.log each ufo report object
+data.forEach(function(ufoReport) {
+  console.log(ufoReport);
+});
 
-// // Step 2:  Use d3 to append one table row `tr` for each ufo report object
-// // Don't worry about adding cells or text yet, just try appending the `tr` elements.
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   const row = tbody.append("tr");
-// });
+// Step 2:  Use d3 to append one table row `tr` for each ufo report object
+// Don't worry about adding cells or text yet, just try appending the `tr` elements.
+data.forEach(function(ufoReport) {
+  console.log(ufoReport);
+  const row = tbody.append("tr");
+});
 
-// // Step 3:  Use `Object.entries` to console.log each ufo report value
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   var row = tbody.append("tr");
+// Step 3:  Use `Object.entries` to console.log each ufo report value
+data.forEach(function(ufoReport) {
+  console.log(ufoReport);
+  var row = tbody.append("tr");
 
-//     for (key in ufoReport){
-//         console.log(key, ufoReport[key]); 
-//     }
-// });
+    for (key in ufoReport){
+        console.log(key, ufoReport[key]); 
+    }
+});
 
-// // Step 4: Use d3 to append 1 cell per ufo report value (date/time, city, state, country, shape, and comment)
-// data.forEach(function(ufoReport) {
-//   console.log(ufoReport);
-//   var row = tbody.append("tr");
+// Step 4: Use d3 to append 1 cell per ufo report value (date/time, city, state, country, shape, and comment)
+data.forEach(function(ufoReport) {
+  console.log(ufoReport);
+  var row = tbody.append("tr");
 
-//     for (key in ufoReport){
-//         console.log(key, ufoReport[key]); 
-//         // Append a cell to the row for each value in the ufo report object
-//         const cell = row.append("td");
-//     }
-// });
+    for (key in ufoReport){
+        console.log(key, ufoReport[key]); 
+        // Append a cell to the row for each value in the ufo report object
+        const cell = row.append("td");
+    }
+});
 
-// // Step 5: Use d3 to update each cell's text with
-// // ufo report values (date/time, city, state, country, shape, and comment)
-    // for (key in ufoReport){
-    //     console.log(key, ufoReport[key]); 
-    //     // Append a cell to the row for each value in the ufo report object
-    //     const cell = tbody.append("td");
-    //     cell.text(value);
-    // }
+// Step 5: Use d3 to update each cell's text with
+// ufo report values (date/time, city, state, country, shape, and comment)
+    for (key in ufoReport){
+        console.log(key, ufoReport[key]); 
+        // Append a cell to the row for each value in the ufo report object
+        const cell = tbody.append("td");
+        cell.text(value);
+    }
 
